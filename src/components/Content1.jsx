@@ -19,14 +19,14 @@ const Content1 = (props) => {
         </p>
         <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-10">
           <button
-            class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-lg text-md md:text-xl "
+            className="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-lg text-md md:text-xl "
             type="button"
             onClick={() => props.set('connect')}
           >
             Connect Wallet
           </button>
           <button
-            class="flex-1 bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-lg text-md md:text-xl hover-span:text-yellow-400"
+            className="flex-1 bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-lg text-md md:text-xl hover-span:text-yellow-400"
             type="button"
             onClick={() => props.set('wallet')}
           >

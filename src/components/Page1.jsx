@@ -24,7 +24,7 @@ const Page1 = (props) => {
           <br />
         </p>
         <button
-          class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-none text-xl "
+          className="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-none text-xl "
           onClick={() => props.set('Page2')}
         >
           Get Started

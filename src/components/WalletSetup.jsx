@@ -5,7 +5,7 @@ const WalletSetup = (props) => {
     <div className="flex-1 flex justify-center content-start">
       <div className="flex flex-col justify-center items-center md:mt-0 mb-auto w-11/12 bg-white p-5 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg space-y-2">
         <button
-          class="w-fit self-start bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-lg text-md md:text-xl hover-span:text-yellow-400"
+          className="w-fit self-start bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-lg text-md md:text-xl hover-span:text-yellow-400"
           type="button"
           onClick={() => props.set('main')}
         >
