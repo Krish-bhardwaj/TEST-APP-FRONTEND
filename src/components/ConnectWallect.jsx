@@ -1,39 +1,68 @@
-import React, { useEffect } from 'react'
-import Connect from './Connect'
+import React, { useState } from 'react'
+import ClaimNFT from './ClaimNFT'
 
 const ConnectWallect = (props) => {
+  const [walletAddress, setWalletAddress] = useState('')
+  const connectMetamask = async () => {
+    console.log('connect to metamask')
+    if (window.ethereum) {
+      console.log('Metamask detected')
+      try {
+        const accounts = await window.ethereum.request({
+          method: 'eth_requestAccounts',
+        })
+        console.log('User account : ', accounts.toString(0))
+        setWalletAddress(accounts[0])
+      } catch (error) {
+        console.log('Error connecting')
+      }
+    } else {
+      console.log('Metamask not detected')
+    }
+  }
   return (
-    <div className="flex-1 flex justify-center content-start">
-      <div className="flex flex-col justify-center items-center md:mt-0 mb-auto w-11/12 bg-white p-5 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg space-y-2">
+    <div className="flex content-start justify-center flex-1">
+      <div className="flex flex-col items-center justify-center w-11/12 p-5 mb-auto space-y-2 bg-white md:mt-0 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg">
         <button
-          className="w-fit self-start bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-lg text-md md:text-xl "
+          className="self-start px-4 py-2 font-semibold text-black bg-transparent border border-black rounded-full w-fit hover:bg-black hover:text-white md:rounded-lg text-md md:text-xl "
           type="button"
           onClick={() => props.set('main')}
         >
           Back
         </button>
-        <h1 className="font-mono text-center text-3xl md:text-5xl font-extrabold">
-          Connect Wallet
-        </h1>
-        <Connect/>
-        <div className="grid grid-flow-row space-y-5 ">
-          <div className="font-mono font-extrabold text-xl md:text-2xl flex flex-col space-y-5 ">
-            <button className="w-80 bg-transparent hover:bg-black text-black font-semibold hover:text-white border-2 border-black rounded-full inline-flex  items-center">
-              <img
-                src="https://dummyimage.com/50x50"
-                className="rounded-full"
-              />
-              <p className="align-center flex-1"> Metamask</p>
-            </button>
-            <button className="w-80 bg-transparent hover:bg-black text-black font-semibold hover:text-white border-2 border-black rounded-full inline-flex  items-center">
-              <img
-                src="https://dummyimage.com/50x50"
-                className="rounded-full"
-              />
-              <p className="align-center flex-1"> Wallect Connect</p>
-            </button>
-          </div>
-        </div>
+        {walletAddress !== '' && (
+          <>
+            <ClaimNFT address={walletAddress} />
+          </>
+        )}
+        {walletAddress === '' && (
+          <>
+            <h1 className="font-mono text-3xl font-extrabold text-center md:text-5xl">
+              Connect Wallet
+            </h1>
+            <div className="grid grid-flow-row space-y-5 ">
+              <div className="flex flex-col space-y-5 font-mono text-xl font-extrabold md:text-2xl ">
+                <button
+                  className="inline-flex items-center font-semibold text-black bg-transparent border-2 border-black rounded-full w-80 hover:bg-black hover:text-white"
+                  onClick={connectMetamask}
+                >
+                  <img
+                    src="https://dummyimage.com/50x50"
+                    className="rounded-full"
+                  />
+                  <p className="flex-1 align-center"> Metamask</p>
+                </button>
+                <button className="inline-flex items-center font-semibold text-black bg-transparent border-2 border-black rounded-full w-80 hover:bg-black hover:text-white">
+                  <img
+                    src="https://dummyimage.com/50x50"
+                    className="rounded-full"
+                  />
+                  <p className="flex-1 align-center"> Wallect Connect</p>
+                </button>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   )
