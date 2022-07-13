@@ -136,6 +136,7 @@ const Main = async () => {
       tokenid,
     )
     console.log(Tx2)
+    return `https://testnets.opensea.io/assets/rinkeby/${CONTRACT_ADDRESS}/${tokenid}`
   } else {
     console.log('No he is not allowed to mint ')
     // console.log(
@@ -144,6 +145,8 @@ const Main = async () => {
     console.log(
       `You have recived NFT of our collection \nToken id : ${value}\nView on OpenSea : https://testnets.opensea.io/assets/rinkeby/${CONTRACT_ADDRESS}/${value}`,
     )
+    return `https://testnets.opensea.io/assets/rinkeby/${CONTRACT_ADDRESS}/${value}`
+  
   }
 
   // const Tx2 = await userContract['update(address,uint256)'](USER_ADDRESS, 0)
@@ -153,4 +156,11 @@ const Main = async () => {
 
   console.log('-- PROCESS FINISH --')
 }
-Main()
+
+
+async function result () {
+  const link = await Main()
+  console.log("RESULT : "+link)
+} 
+
+result()
