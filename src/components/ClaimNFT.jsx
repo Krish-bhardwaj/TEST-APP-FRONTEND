@@ -3,11 +3,17 @@ import { useState } from 'react'
 
 const ClaimNFT = (props) => {
   const [success, setSuccess] = useState(1)
+  const [url , setUrl] = useState('')
   // Smart Contract Integration
   const main = () => {
     console.log('TEST')
-    // setSuccess(2)
+    setUrl('https://google.com')
+    setSuccess(2)
+    
   }
+  const openInNewTab = () => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   return (
     <div className="flex flex-col items-center justify-center space-y-10">
       <p className="font-bold">
@@ -31,7 +37,7 @@ const ClaimNFT = (props) => {
           }
           {
             success === 2 && (
-              <p className="flex-1 align-center">View your NFT on OpenSea</p>
+              <p className="flex-1 align-center" onClick={openInNewTab}>View your NFT on OpenSea</p>
             )
           }
         </button>
