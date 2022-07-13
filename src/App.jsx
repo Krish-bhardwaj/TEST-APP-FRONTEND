@@ -6,9 +6,10 @@ function App() {
   const [active, setActive] = useState('Page1')
 
   return (
-    <div className="App bg-gradient-to-t from-blue-400  to-purple-300 h-screen">
+    <div className=" App bg-gradient-to-t from-blue-400 to-purple-300">
       {active === 'Page1' && <Page1 set={(x) => setActive(x)} />}
       {active === 'Page2' && <Page2 />}
+      <p className='pb-5 text-center'>@KONMA | KRISH BHARDWAJ</p>
     </div>
   )
 }

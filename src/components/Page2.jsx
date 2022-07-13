@@ -10,7 +10,7 @@ import WalletSetup from './WalletSetup'
 const Page2 = () => {
   const [block, setBlock] = useState('main')
   return (
-    <div className="flex flex-col md:flex-row h-screen justify-center items-center md:mx-10 space-x-0 md:space-x-5 space-y-5 md:space-y-0">
+    <div className="flex flex-col items-center justify-center h-screen space-x-0 space-y-5 -mb-7 md:flex-row md:mx-10 md:space-x-5 md:space-y-0">
       {block === 'main' && <Main />}
       {block === 'wallet' && <Wallet />}
       {block === 'connect' && <Card />}
