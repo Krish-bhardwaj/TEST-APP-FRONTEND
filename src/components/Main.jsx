@@ -1,16 +1,16 @@
 import React from 'react'
-
+import NFT from './assets/NFT.png'
 const Main = () => {
   return (
     <div className="hidden md:contents">
       <div className="inline-flex justify-center">
-        <div className="flex flex-col justify-center items-center w-2/3 md:w-fit bg-white p-2 md:p-5 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg ">
-          <h1 className="font-mono text-center text-xl md:text-3xl font-extrabold">
+        <div className="flex flex-col items-center justify-center w-2/3 p-2 bg-white md:w-fit md:p-5 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg ">
+          <h1 className="font-mono text-xl font-extrabold text-center md:text-3xl">
             Connect Wallet
           </h1>
           <img
-            src="https://dummyimage.com/300x300"
-            className="w-4/6 md:w-auto"
+            src={NFT}
+            className="w-3/6 md:w-5/6"
           />
         </div>
       </div>

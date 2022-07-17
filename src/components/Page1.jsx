@@ -1,11 +1,11 @@
 import React from 'react'
-
+import logo from './assets/Konma_Logo-01_square_0.png'
 const Page1 = (props) => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen space-y-5 -mb-7 -space-x-0 md:flex-row md:mx-10 md:space-x-5 md:space-y-0">
+    <div className="flex flex-col items-center justify-center flex-1 space-y-5 -space-x-0 md:flex-row md:mx-10 md:space-x-5 md:space-y-0">
       <div className="flex-none">
         <img
-          src="https://dummyimage.com/300x300"
+          src={logo}
           className="w-40 h-40 m-5 md:h-96 md:w-96"
         />
       </div>

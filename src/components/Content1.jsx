@@ -1,32 +1,64 @@
 import React from 'react'
+import NFT from './assets/NFT.png'
+import Web3Modal from './Web3Modal'
+import { ethers } from 'ethers'
+
+// import WalletConnectProvider from "@walletconnect/web3-provider";
+
+// const providerOptions = {
+//   // walletconnect: {
+//   //   package: WalletConnectProvider, // required
+//   //   options: {
+//   //     infuraId: "26157b8cd83d4de1a2e617703d981da8" // required
+//   //   }
+//   // }
+// };
 
 const Content1 = (props) => {
+  
+  // async function connectWallect(){
+  //   console.log("ok")
+  //   try {
+  //     let web3Modal = new Web3Modal({
+  //       cacheProvider: false, // optional
+  //       providerOptions // required
+  //     });
+  //     const instance = await web3Modal.connect();
+  //     const provider = new ethers.providers.Web3Provider(instance);
+  //     console.log(instance);
+  //   }
+  //   catch(error){
+  //     console.log(error);
+  //   }
+  // }
+
   return (
-    <div className="flex-1 flex justify-center content-start">
-      <div className="flex flex-col justify-center mt-5 md:mt-0 mb-auto w-11/12 bg-white p-5 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg space-y-5 md:space-y-20">
-        <h1 className="font-mono text-center md:text-left text-xl md:text-3xl font-extrabold">
+    <div className="flex content-start justify-center flex-1">
+      <div className="flex flex-col justify-center w-11/12 p-5 mt-5 mb-auto space-y-5 bg-white md:mt-0 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg md:space-y-20">
+        <h1 className="font-mono text-xl font-extrabold text-center md:text-left md:text-3xl">
           Get a chance to mint this NFT!
         </h1>
         <div className="md:hidden contents ">
           <img
-            src="https://dummyimage.com/300x300"
-            className="w-4/6 md:w-auto mx-auto my-5"
+            src={NFT}
+            className="w-4/6 mx-auto my-5 md:w-auto"
           />
         </div>
 
-        <p className="font-mono text-center md:text-left text-sm md:text-xl font-extrabold text-purple-900">
+        <p className="font-mono text-sm font-extrabold text-center text-purple-900 md:text-left md:text-xl">
           Join Konma x Social Works' meet and greet this weekend.
         </p>
-        <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-10">
+        <div className="flex flex-col space-y-5 md:flex-row md:space-y-0 md:space-x-10">
           <button
-            className="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-lg text-md md:text-xl "
+            className="px-4 py-2 font-semibold text-black bg-transparent border border-black rounded-full hover:bg-black hover:text-white md:rounded-none text-md md:text-xl "
             type="button"
             onClick={() => props.set('connect')}
+            // onClick={connectWallect}
           >
             Connect Wallet
           </button>
           <button
-            className="flex-1 bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black rounded-full md:rounded-lg text-md md:text-xl hover-span:text-yellow-400"
+            className="flex-1 px-4 py-2 font-semibold text-black bg-transparent border border-black rounded-2xl hover:bg-black hover:text-white md:rounded-none text-md md:text-xl hover-span:text-yellow-400"
             type="button"
             onClick={() => props.set('wallet')}
           >
