@@ -32,7 +32,7 @@ const ConnectWallect = (props) => {
         </button>
         {walletAddress !== '' && (
           <>
-            <ClaimNFT address={user.get('ethAddress')} />
+            <ClaimNFT address={walletAddress} />
           </>
         )}
         {walletAddress === '' && (
