@@ -1,11 +1,15 @@
 import React from 'react'
-
+import Metamask from './assets/MetaMask.png'
+import Login from './assets/Login.png'
+import Secreat from './assets/secreat.png'
+import Pass from './assets/pass.png'
+import Confirm from './assets/confirm.png'
 const WalletSetup = (props) => {
   return (
     <div className="flex content-start justify-center flex-1">
       <div className="flex flex-col items-center justify-center w-11/12 p-5 mb-auto space-y-2 bg-white md:mt-0 rounded-xl bg-opacity-60 backdrop-filter backdrop-blur-lg">
         <button
-          className="self-start px-4 py-2 font-semibold text-black bg-transparent border border-black rounded-full w-fit hover:bg-black hover:text-white md:rounded-lg text-md md:text-xl hover-span:text-yellow-400"
+          className="self-start px-4 py-2 font-semibold text-black bg-transparent border border-black rounded-none w-fit hover:bg-black hover:text-white text-md md:text-xl hover-span:text-yellow-400"
           type="button"
           onClick={() => props.set('main')}
         >
@@ -24,8 +28,8 @@ const WalletSetup = (props) => {
               1
             </span>
             <img
-              src="https://dummyimage.com/50x50"
-              className="self-center px-2 md:w-fit w-min md:px-0"
+              src={Metamask}
+              className="self-center px-2 w-20 md:px-0"
             />
             <div className="hidden md:contents">
               <span className="px-2 text-center ">
@@ -42,8 +46,8 @@ const WalletSetup = (props) => {
               2
             </span>
             <img
-              src="https://dummyimage.com/50x50"
-              className="self-center px-2 md:w-fit w-min md:px-0"
+              src={Login}
+              className="self-center px-2 w-20 md:px-0"
             />
             <div className="hidden md:contents">
               <span className="px-2 text-center ">
@@ -60,8 +64,8 @@ const WalletSetup = (props) => {
               3
             </span>
             <img
-              src="https://dummyimage.com/50x50"
-              className="self-center px-2 md:w-fit w-min md:px-0"
+              src={Secreat}
+              className="self-center px-2 w-20 md:px-0"
             />
             <div className="hidden md:contents">
               <span className="px-2 text-center ">
@@ -80,8 +84,8 @@ const WalletSetup = (props) => {
               4
             </span>
             <img
-              src="https://dummyimage.com/50x50"
-              className="self-center px-2 md:w-fit w-min md:px-0"
+              src={Pass}
+              className="self-center px-2 w-20 md:px-0"
             />
             <div className="hidden md:contents">
               <span className="px-2 text-center ">
@@ -100,8 +104,8 @@ const WalletSetup = (props) => {
               5
             </span>
             <img
-              src="https://dummyimage.com/50x50"
-              className="self-center px-2 md:w-fit w-min md:px-0"
+              src={Confirm}
+              className="self-center px-2 py-1 w-20 md:px-0"
             />
             <div className="hidden md:contents">
               <span className="px-2 text-center ">Click on "Confirm"</span>

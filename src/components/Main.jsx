@@ -10,7 +10,7 @@ const Main = () => {
           </h1>
           <img
             src={NFT}
-            className="w-3/6 md:w-5/6"
+            className="w-3/6 md:w-8/12"
           />
         </div>
       </div>
