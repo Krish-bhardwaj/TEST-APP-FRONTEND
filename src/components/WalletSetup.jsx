@@ -1,6 +1,6 @@
 import React from 'react'
 import Metamask from './assets/MetaMask.png'
-import Login from './assets/Login.png'
+import Login from './assets/login.png'
 import Secreat from './assets/secreat.png'
 import Pass from './assets/pass.png'
 import Confirm from './assets/confirm.png'
